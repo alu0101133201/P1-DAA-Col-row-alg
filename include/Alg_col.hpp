@@ -5,6 +5,8 @@
  * Clase concreta que define operaciones de matrices por columnas. Fichero hpp
  */
 
+#pragma once
+
 #include "Algorithms.hpp"
 #include "BasicMatrix.hpp"
 

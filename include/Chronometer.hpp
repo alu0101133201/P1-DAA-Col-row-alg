@@ -5,6 +5,8 @@
  * Clase que implementa un cronómeto mediante el uso de la librería chrono. Fichero hpp
  */
 
+#pragma once
+
 #include <iostream>
 #include <chrono>
 #include <ctime>
