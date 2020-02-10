@@ -30,16 +30,16 @@ int main(void) {
 	std::cout << "\nIntroduzca las dimensiones de la primera matriz:\t";
 	std::cin >> a >> b;
 
-	std::cout << "\nIntroduzca las dimensiones de la segunda matrix:\t";
+	std::cout << "\nIntroduzca las dimensiones de la segunda matriz:\t";
 	std::cin >> c >> d;
 	
 	std::cout << "\nIntroduzca un 0 para valores aleatorios, en otro caso, introduzca el valor para rellenar las matrices:\t";
 	std::cin >> opt;
 
 
-		BasicMatrix A(a,b,opt);
-		BasicMatrix B(c,d,opt);
-		BasicMatrix C(a,d,opt);
+	BasicMatrix A(a,b,opt);
+	BasicMatrix B(c,d,opt);
+	BasicMatrix C(a,d,opt);
 
 
   punt = new Alg_row;
