@@ -11,24 +11,26 @@
 #include "../include/Algorithms.hpp"
 #include "../include/Alg_row.hpp"
 #include "../include/Alg_col.hpp"
+#include "../include/Chronometer.hpp"
 
 
 int main(void) {
 
-  BasicMatrix A(2,3);
-  BasicMatrix B(3,2);
-  BasicMatrix C(2,2);
+  Chronometer X;
+  X.start_();
+  BasicMatrix A(100,100);
+  BasicMatrix B(100,100);
+  BasicMatrix C(100,100);
   Algorithms* punt;
 
   punt = new Alg_col;
 
   punt->mult(A,B,C);
 
-  A.write(std::cout);
-  B.write(std::cout);
-  C.write(std::cout);
 
+  X.stop();
 
+  std::cout << "Tiempo: " << X.get_duration().count() << "\n";
 
   return(0);
 }
