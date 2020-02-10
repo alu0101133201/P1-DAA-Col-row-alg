@@ -5,30 +5,23 @@
  * Clase que implementa una matriz básica. fichero cpp
  */
 
-#include "../include/BasicMatrix.hpp"
+#include "BasicMatrix.hpp"
 
-
-BasicMatrix::BasicMatrix(int r, int c)
-    : rows(r),
-      cols(c) {
-
-  matrix.resize(r);
-  for(int i = 0; i < r; i++) {
-    matrix[i].resize(c);
-  }
-  fill();
-
-}
 
 BasicMatrix::BasicMatrix(int r, int c, int num)
     : rows(r),
       cols(c) {
 
   matrix.resize(r);
+
     for(int i = 0; i < r; i++) {
       matrix[i].resize(c);
     }
-  fill(num);
+
+	if (num != 0) 
+  	fill(num);
+	else
+		fill();
 }
 
 BasicMatrix::~BasicMatrix()
@@ -82,4 +75,5 @@ std::ostream& BasicMatrix::write(std::ostream& os) {
     os << "\n";
   }
   os << "\n";
+  return os;
 }

@@ -5,7 +5,7 @@
  * Clase que implementa un cronómeto mediante el uso de la librería chrono. Fichero cpp
  */
 
-#include "../include/Chronometer.hpp"
+#include "Chronometer.hpp"
 
 Chronometer::Chronometer(void){}
 
@@ -17,6 +17,7 @@ void Chronometer::start_(void){
 
 void Chronometer::stop(void){
   end = std::chrono::system_clock::now();
+  elapsed_seconds = end - start;
 }
 
 std::chrono::duration<double> Chronometer::get_duration(void){

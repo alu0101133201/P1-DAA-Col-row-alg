@@ -5,7 +5,7 @@
  * Clase concreta que define operaciones de matrices por columnas. Fichero cpp
  */
 
-#include "../include/Alg_col.hpp"
+#include "Alg_col.hpp"
 
 
 /* Si devuelve 0 es que se multiplicó exitosamente, si no, devolverá 1 */

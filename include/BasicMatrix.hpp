@@ -21,8 +21,7 @@ class BasicMatrix {
 
   public:
 
-  BasicMatrix(int r, int c);
-  BasicMatrix(int r, int c, int num);
+  BasicMatrix(int r, int c, int num = 0);
 
   ~BasicMatrix();
 

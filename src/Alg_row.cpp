@@ -5,7 +5,7 @@
  * Clase concreta que define operaciones de matrices por filas. Fichero cpp
  */
 
-#include "../include/Alg_row.hpp"
+#include "Alg_row.hpp"
 
 /* Si devuelve 0 es que se multiplicó exitosamente, si no, devolverá 1 */
 int Alg_row::mult(const BasicMatrix &a, const BasicMatrix &b, BasicMatrix &c) {
