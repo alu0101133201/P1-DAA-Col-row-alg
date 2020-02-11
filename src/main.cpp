@@ -11,6 +11,7 @@
 #include "Algorithms.hpp"
 #include "Alg_row.hpp"
 #include "Alg_col.hpp"
+#include "Alg_mod.hpp"
 #include "Chronometer.hpp"
 #include "Alg_Mat.hpp"
 
@@ -25,6 +26,7 @@ int main(void) {
 
 	std::chrono::duration<double>::rep t1;
 	std::chrono::duration<double>::rep t2;
+	std::chrono::duration<double>::rep t3;
 
 	std::cout << "\nPráctica 01 de la asignatura Diseño y Análisis de Algoritmos (DAA)\n";
 	std::cout << "\nIntroduzca las dimensiones de la primera matriz:\t";
@@ -38,11 +40,12 @@ int main(void) {
 
 	//Matriz para almacenar el resultado
 	BasicMatrix C(a,d,opt);
+	BasicMatrix C2(a,d,opt);
 	
 
 	Alg_Mat matrix_mult(a,b,c,d,opt);
 
-  punt = new Alg_row;
+        punt = new Alg_row;
 	matrix_mult.set_algorithm(punt);
 	flag = matrix_mult.mult(C);
 
@@ -58,8 +61,13 @@ int main(void) {
 	matrix_mult.set_algorithm(punt);
 	matrix_mult.mult(C);
 	t2 = matrix_mult.get_duration().count();
+
 	
 	delete punt;
+	punt = new Alg_mod;
+	matrix_mult.set_algorithm(punt);
+	matrix_mult.mult(C2);
+	t3 = matrix_mult.get_duration().count();
 
 
 	std::cout << "¿Desea imprimir las matrices (1 sí, 0 no)?\n >";
@@ -72,10 +80,13 @@ int main(void) {
 		matrix_mult.write_B(std::cout);
 		std::cout << "\n--MATRIZ RESULTADO--\n\n";
 		C.write(std::cout);
+		std::cout << "\n--MATRIZ RESULTADO 2--\n\n";
+		C2.write(std::cout);
 	}
 
   std::cout << "\n\nTiempo por filas: " << t1 << "seg.\n";
   std::cout << "\n\nTiempo por columnas: " << t2 << "seg.\n";
+  std::cout << "\n\nTiempo por traspuesta: " << t3 << "seg.\n";
 
 
   return(0);

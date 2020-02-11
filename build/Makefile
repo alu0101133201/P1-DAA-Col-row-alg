@@ -6,11 +6,14 @@ ODIR=../src
 
 .PHONY: all
 
-_OBJ = Alg_Mat.o Chronometer.o BasicMatrix.o Alg_row.o Alg_col.o main.o
+_OBJ = Alg_mod.o Alg_Mat.o Chronometer.o BasicMatrix.o Alg_row.o Alg_col.o main.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 all: P1
+
+$(ODIR)/Alg_mod.o: $(ODIR)/Alg_mod.cpp $(IDIR)/Alg_mod.hpp
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(ODIR)/Alg_Mat.o: $(ODIR)/Alg_Mat.cpp $(IDIR)/Alg_Mat.hpp
 	$(CC) -c -o $@ $< $(CFLAGS)

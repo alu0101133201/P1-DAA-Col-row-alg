@@ -15,4 +15,5 @@ class Algorithms {
 
     virtual int mult(const BasicMatrix &a, const BasicMatrix &b, BasicMatrix &c) = 0;
 
+    virtual BasicMatrix traspuesta(const BasicMatrix &b_) = 0;
 };

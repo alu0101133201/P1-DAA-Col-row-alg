@@ -29,6 +29,8 @@ void Alg_Mat::set_algorithm(Algorithms* pt){
 
 int Alg_Mat::mult(BasicMatrix &C){
 
+	
+
 	timer.start_();
 	int r = Alg->mult(*A,*B,C);
 	timer.stop();

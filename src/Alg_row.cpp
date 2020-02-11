@@ -34,3 +34,17 @@ int Alg_row::mult(const BasicMatrix &a, const BasicMatrix &b, BasicMatrix &c) {
 
    return (0);
 }
+
+BasicMatrix Alg_row::traspuesta(const BasicMatrix &b_){
+
+  BasicMatrix tras(b_.get_cols(),b_.get_rows());
+  for(int i = 0; i < b_.get_rows() ; i++){
+    for(int j = 0; j < b_.get_cols(); j++){
+	tras.set_value(j,i,b_.get_value(i,j));
+    }	    
+  }
+  return tras;
+
+
+
+}

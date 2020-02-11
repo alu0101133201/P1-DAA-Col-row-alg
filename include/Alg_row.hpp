@@ -14,4 +14,6 @@ class Alg_row : public Algorithms {
 
   int mult(const BasicMatrix &a, const BasicMatrix &b, BasicMatrix &c);
 
+  virtual BasicMatrix traspuesta(const BasicMatrix &b_);
+
 };
